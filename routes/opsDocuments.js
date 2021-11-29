@@ -17,7 +17,12 @@ const client = {
 }
 
 router.get('/', async function(req, res) {
-  let response = await getOpDocuments(2175);
+  let opId = parseInt(req.query.op_id);
+  let token = req.query.token;
+  if (token != process.env.API_TOKEN){
+    res.send(401)
+  }
+  let response = await getOpDocuments(opId);
   console.log(response);
   res.send({documentURL: response});
 });
