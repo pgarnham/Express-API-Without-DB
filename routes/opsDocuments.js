@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+let getOpDocuments = require('../functions/getOpDocuments');
+
 
 const clients = [
   { name: 'João', age: 20 },
@@ -14,8 +16,10 @@ const client = {
   age: 25
 }
 
-router.get('/', function(req, res) {
-  res.send(clients);
+router.get('/', async function(req, res) {
+  let response = await getOpDocuments(2175);
+  console.log(response);
+  res.send({documentURL: response});
 });
 
 router.post('/', function(req, res) {
