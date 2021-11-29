@@ -20,7 +20,7 @@ router.get('/', async function(req, res) {
   let opId = parseInt(req.query.op_id);
   let token = req.query.token;
   if (token != process.env.API_TOKEN){
-    res.send(401)
+    return "error Unauthorized"
   }
   let response = await getOpDocuments(opId);
   console.log(response);
