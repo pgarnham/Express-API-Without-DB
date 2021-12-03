@@ -1,7 +1,7 @@
 axios = require('axios');
 
-  const getOpDocuments = async (opDI) => {
-    let requestUrl = process.env.GOOGLE_SCRIPT_API + opDI;
+  const getOpDocuments = async (opDI, pmAddress) => {
+    let requestUrl = process.env.GOOGLE_SCRIPT_API + opDI + '&pm_address=' + pmAddress;
     let documentURL
     /*await axios({
         method: 'get',
