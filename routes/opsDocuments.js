@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let getOpDocuments = require('../functions/getOpDocuments');
+let getUnifiedContract = require('../functions/getUnifiedContract');
 
 
 router.get('/', async function(req, res) {
@@ -14,6 +15,18 @@ router.get('/', async function(req, res) {
   console.log(response);
   res.send({documentURL: response});
 });
+
+
+router.post('/', async function(req, res) {
+  console.log(req.body)
+  let token = req.body.token;
+  if (token != process.env.API_TOKEN){
+    return "error Unauthorized"
+  }
+  let response = await getUnifiedContract({"documentData": req.body});
+  console.log(response);
+  res.send({documentUrl: response})
+})
 
 
 module.exports = router;
