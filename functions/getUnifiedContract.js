@@ -5,7 +5,7 @@ axios = require('axios');
     let documentURL
     await axios
     .post(requestUrl, companyData)
-    .then((res) => {console.log("la res desde express uf es: ", res.data.documentData);documentURL = res.data.documentData})
+    .then((res) => {console.log("la res desde express uf es: ", res.data);documentURL = res.data})
     .catch((err) => console.log(err));
     return documentURL
     }
