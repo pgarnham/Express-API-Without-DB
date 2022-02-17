@@ -1,5 +1,6 @@
 const express = require('express');
 const opsDocuments = require('./routes/opsDocuments');
+const paymentsDocuments = require('./routes/paymentsDocuments')
 
 const app = express();
 
@@ -16,5 +17,6 @@ app.use(function(req, res, next) {
 app.use(express.json());
 
 app.use('/op-documents', opsDocuments);
+app.use('/payments-documents', paymentsDocuments)
 
 app.listen(process.env.PORT || 5000)
