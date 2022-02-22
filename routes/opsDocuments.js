@@ -28,5 +28,18 @@ router.post('/', async function(req, res) {
   res.send({documentUrl: response})
 })
 
+router.post('/', async function(req, res) {
+  console.log(req.body)
+  let token = req.body.token;
+  if (token != process.env.API_TOKEN){
+    return "error Unauthorized"
+  }
+  let opId = parseInt(req.body.op_id);
+  let pmAddress = req.body.pm_address;
+  let response = await getOpDocuments(opId, pmAddress);
+  console.log(response);
+  res.send({documentUrl: response})
+})
+
 
 module.exports = router;

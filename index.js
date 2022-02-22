@@ -1,6 +1,7 @@
 const express = require('express');
 const opsDocuments = require('./routes/opsDocuments');
-const paymentsDocuments = require('./routes/paymentsDocuments')
+const paymentsDocuments = require('./routes/paymentsDocuments');
+const earlyPaymentDirectFInancing = require('./routes/pp-fd-mx');
 
 const app = express();
 
@@ -18,5 +19,6 @@ app.use(express.json());
 
 app.use('/op-documents', opsDocuments);
 app.use('/payments-documents', paymentsDocuments)
+app.use('/pp-fd-mx', earlyPaymentDirectFInancing)
 
 app.listen(process.env.PORT || 5000)
