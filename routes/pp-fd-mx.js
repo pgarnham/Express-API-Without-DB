@@ -9,7 +9,7 @@ router.post('/', async function(req, res) {
     if (token != process.env.API_TOKEN){
       return "error Unauthorized"
     }
-    let opId = parseInt(req.body.op_id);
+    let opId = parseInt(req.body.opId);
     let pmAddress = req.body.pmAddress;
     let contractDate = req.body.contractDate
     let companyData = {
