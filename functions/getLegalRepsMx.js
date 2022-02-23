@@ -3,12 +3,9 @@ axios = require('axios');
 
 const getLegalRepsMx = async (opId) => {
     let requestUrl = process.env.LEGAL_REPS_MX_API;
-    let legalReps
-    await axios
+    let res = await axios
     .post(requestUrl, {'opId': opId})
-    .then((res) => {console.log("la res desde express uf es: ", res.data);legalReps = res.data.legalReps})
-    .catch((err) => console.log(err));
-    return legalReps
+    return res.data.legalReps
     }
 
 
