@@ -1,5 +1,3 @@
-https://script.google.com/macros/s/AKfycbxrK2lEqdnrWczMGuPveu1MNZjSfkSJBz28ylEOabc0n-lxhsSq0SiPo7CZaeSDSTDXGg/exec
-
 var express = require('express');
 var router = express.Router();
 let getLegalRepsMx = require('../functions/getLegalRepsMx');
