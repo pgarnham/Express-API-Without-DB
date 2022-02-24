@@ -11,11 +11,13 @@ router.post('/', async function(req, res) {
     }
     let opId = parseInt(req.body.opId);
     let pmAddress = req.body.pmAddress;
-    let contractDate = req.body.contractDate
+    let contractDate = req.body.contractDate;
+    let legalReps = req.body.legalReps;
     let companyData = {
         'opId': opId,
         'pmAddress': pmAddress,
-        'contractDate': contractDate
+        'contractDate': contractDate,
+        'legalReps': legalReps
     }
     let response = await getOpDocumentsv2(companyData);
     console.log(response);
