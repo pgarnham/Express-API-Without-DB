@@ -12,7 +12,7 @@ router.post('/', async function(req, res) {
     let opId = parseInt(req.body.opId);
     let response = await getLegalRepsMx(opId);
     console.log(response);
-    res.send({legalReps: response})
+    res.send({legalReps: response.legalReps, orderType: response.orderType})
   })
   
   
