@@ -6,7 +6,7 @@ const getLegalRepsMx = async (opId) => {
     let res = await axios
     .get(requestUrl + '?opId=' + opId)
     console.log('response de google script es: ', res)
-    return res.data.legalReps
+    return res.data
     }
 
 
